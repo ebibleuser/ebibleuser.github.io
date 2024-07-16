@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>导航栏</title>
+<style>
+/* Reset some default styles for better appearance */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the navigation bar */
+nav {
+    background-color: #333; /* Dark background color */
+    padding: 10px 0; /* Add padding above and below the links */
+}
+
+/* Style the unordered list (ul) */
+ul {
+    list-style-type: none; /* Remove bullet points */
+    text-align: center; /* Center-align the links */
+}
+
+/* Style the list items (li) */
+li {
+    display: inline; /* Display the list items horizontally */
+    margin: 0 10px; /* Add margin between each list item */
+}
+
+/* Style the links (a) */
+a {
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Add padding inside the links */
+    display: inline-block; /* Display as block for padding purposes */
+}
+
+/* Change link color on hover */
+a:hover {
+    background-color: #555; /* Darken the background color */
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">关于我们</a></li>
+        <li><a href="#">服务项目</a></li>
+        <li><a href="#">联系我们</a></li>
+    </ul>
+</nav>
+
+</body>
+</html>
