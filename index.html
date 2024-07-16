@@ -1,50 +1,59 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>电子圣经团契中文网</title>
-</head>
-<body>
-
-<nav>
-    <ul>
-        <li><a href="#">首页</a></li>
-        <li><a href="#">关于我们</a></li>
-        <li><a href="#">服务项目</a></li>
-        <li><a href="#">联系我们</a></li>
-    </ul>
-</nav>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>电子圣经团契中文网</title>
 <style>
   body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
   }
-  .container {
-    text-align: center;
+  nav {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
   }
-  .container img {
-    width: 150px;
-    height: 150px;
-    display: block;
-    margin: 0 auto;
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  nav ul li {
+    margin-right: 10px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  nav ul li a:hover {
+    background-color: #555;
   }
 </style>
+<title>电子圣经团契中文网</title>
 </head>
 <body>
-<div class="container">
-  <img src="picture/1.png" alt="电子圣经团契中文网">
-  <h1>电子圣经团契中文网</h1>
-</div>
-</body>
-</html>
+  <nav>
+    <div class="logo">
+      <a href="#">Logo</a>
+    </div>
+    <ul>
+      <li><a href="#">主页</a></li>
+      <li><a href="#">关于</a></li>
+      <li><a href="#">服务</a></li>
+    </ul>
+  </nav>
+
+  <div style="padding: 20px;">
+    <h1>欢迎来到电子圣经团契中文网</h1>
+    <p>在这里我们学习神的话语，共享资源</p>
+  </div>
 </body>
 </html>
