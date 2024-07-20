@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电子圣经团契中文网</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    position: relative; /* 使得图片可以基于body进行定位 */
+  }
+
+  .header {
+    position: relative; /* 相对定位，以便覆盖图片 */
+    z-index: 1; /* 设定层叠顺序，使其位于图片上层 */
+    background-image: url('picture/6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 300px; /* 调整图片高度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: blue;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2; /* 按钮位于图片上层 */
+  }
+
+  .content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .quote {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid black;
+    text-align: center;
+  }
+
+  .lang-links {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .lang-links a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <a class="back-button" href="index.html">返回</a>
+    <h1>电子圣经团契中文网</h1>
+  </div>
+  <div class="quote">
+    <p>第七位天使吹号、天上就有大声音说、世上的国、成了我主和主基督的国．他要作王、直到永永远远。<br>启示录11:15</p>
+  </div>
+
+  <hr style="border-color: black;">
+
+  <div class="lang-links">
+    <a href="index.html">中文</a>
+    <a href="https://ebiblefellowship.org">English</a>
+  </div>
+</body>
+</html>

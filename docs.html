@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子圣经团契中文网</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* 设置背景为白色 */
+            overflow: hidden; /* 隐藏页面滚动条 */
+        }
+
+        .expand-button {
+            cursor: pointer;
+            color: #007bff;
+            text-decoration: none; /* 移除下划线 */
+        }
+
+        .collapse-list {
+            display: none; /* 初始隐藏选项 */
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .collapse-list li {
+            margin-bottom: 10px;
+        }
+
+        .verse-window {
+            display: none; /* 初始隐藏窗口 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.95); /* 半透明白色背景 */
+            z-index: 1000; /* 设为1000层级 */
+            overflow-y: auto; /* 允许窗口垂直滚动 */
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px; /* 圆角 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 阴影效果 */
+        }
+
+        .window-content {
+            color: #000; /* 黑色文字 */
+            font-family: "黑体", Arial, sans-serif; /* 设置黑体字体 */
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="image-section">
+            <!-- 图片11 -->
+            <img src="picture/11.png" alt="图片11">
+        </div>
+
+        <h1 class="expand-button" onclick="toggleCollapse()">罗马书2章查考</h1>
+
+        <ul class="collapse-list" id="collapse-list">
+            <li><span class="expand-button" onclick="openVerse('verse1')">罗马书2章(1)</span></li>
+            <li><span class="expand-button" onclick="openVerse('verse2')">罗马书2章(2)</span></li>
+            <li><span class="expand-button" onclick="openVerse('verse3')">罗马书2章(3)</span></li>
+            <!-- 其他章节链接按照类似的方式添加 -->
+        </ul>
+
+        <!-- 罗马书2章的内容窗口 -->
+        <div id="verse1-window" class="verse-window">
+            <div class="window-content">
+                <span class="close-button" onclick="closeVerse('verse1')">✖</span>
+                <h1>罗马书2章(1)</h1>
+                <p>    大家好，欢迎收听电子圣经团契圣经查考节目。今天是罗马书2章第1讲。我们首先读罗马
+                    书2:1-4:你这论断人的，无论你是谁，也无可推诿，你在什么事上论断人，就在什么事上定自
+                    己的罪。因你这论断人的，自己所行却和别人一样。【英：所以你无可推诿，O 你这论断人
+                    的，无论你是谁：你在什么事上论断人，就在什么事上定自己的罪。因你这论断人的，自己所行
+                    却和别人一样。】我们知道这样行的人，神必照真理审判他。你这人哪，你论断行这样事的
+                    人，自己所行的却和别人一样，你以为能逃脱神的审判吗？还是你藐视他丰富的恩慈，宽容，
+                    忍耐，不晓得他的恩慈是领你悔改呢？ </p>
+                <p>第2章开始于“所以”这个词，因此我们要去前面一章看一下是在讲什么，我们看到前面的
+                    章节谈到一长串的罪—— 神列出23项丑陋、肮脏、腐烂的罪。记得我们在1章最后一节经文
+                    中读到，罗马书1章：他们虽知道神判定，行这样事的人是当死的，然而他们不但自己去行，
+                    还喜欢别人去行。<p>
+                <P>我们当时查考了“喜欢”这个词，看到它可以更好地理解为“同意”，也就是说，你不仅这
+                    样行，你也同意（赞许）那些行这些事的人。然后圣经接下来在第2章说：“所以你无可推诿，
+                    O ……”因此神这里是在对全人类讲话。 <p>
+                </p>另外顺便说一下，我们读到“O”这个词，它是希腊语里的一个字母。它是俄梅戛，是希腊
+                文里的最后一个字母。它在新约里出现16次，其中至少9次，它被用来表达指责、责备的语
+                气，如同我们这里罗马书2:1所读到的：你这论断人的，无论你是谁，也无可推诿，你在什么
+                事上论断人，就在什么事上定自己的罪。因你这论断人的，自己所行却和别人一样。【英：所
+                以你无可推诿，O 你这论断人的，无论你是谁：你在什么事上论断人，就在什么事上定自己的
+                罪。因你这论断人的，自己所行却和别人一样。】 
+                神是在指责全人类。<p>
+                <p>我们在罗马书2:3中也读到这个词：0你这人哪，你论断行这样事的人，自己所行的却和别
+                    人一样，你以为能逃脱神的审判吗？ </p>
+                <p>很明显这是在责备的语气。 
+                    在罗马书9:18-20我们也读到：如此看来，神要怜悯谁，就怜悯谁，要叫谁刚硬，就叫谁
+                    刚硬。这样，你必对我说，他为什么还指责人呢？有谁抗拒他的旨意呢？O 你这个人哪，你是
+                    谁，竟敢向神强嘴呢？受造之物岂能对造他的说，你为什么这样造我呢？</p>
+                <p>在这里，有人疑问神有祂的主权，祂可以怜悯谁就怜悯谁。 就像今天，许多人疑问神的拣
+                    选计划，坚持所谓的自由意志。 </p>
+                <p>我们再查考二段经文。加拉太书3章O 无知的加拉太人哪，耶稣基督钉十字架，已经活画
+                    在你们眼前，谁又迷惑了你们呢？</p>
+                <p>我们再查考二段经文。加拉太书3章O 无知的加拉太人哪，耶稣基督钉十字架，已经活画
+                    在你们眼前，谁又迷惑了你们呢？</p>
+                <p>普遍就是这种意思，神大多数情况是这样使用这个词的，尽管这个词也被用在正面的上下文
+                    里，但是它都被用来突出一个阐述。不仅只是说，“无知的加拉太人，谁又迷惑了你们呢？”，
+                    祂说，“O 无知的加拉太人哪”以及“O 虚浮的人哪”。 </p>
+                <p>我提到它是希腊文里的俄梅戛字母，但是这和我们在启示录1:8所读到的是不同的意思：
+                    主神说，我是阿拉法，我是俄梅戛（阿拉法俄梅戛乃希腊字母首末二字）【英有：我是初，我
+                    是终】，是昔在今在以后永在的全能者。 
+                    我记得，这个耶稣宣言，“我是阿拉法，我是</p>
+                <p>我提到它是希腊文里的俄梅戛字母，但是这和我们在启示录1:8所读到的是不同的意思：
+                    主神说，我是阿拉法，我是俄梅戛（阿拉法俄梅戛乃希腊字母首末二字）【英有：我是初，我
+                    是终】，是昔在今在以后永在的全能者。 
+                    我记得，这个耶稣宣言，“我是阿拉法，我是</p>
+                <p>神在重复这个真理。因此俄梅戛Omega是基督自己的一个名字，当我们读到“Omega”，它
+                    不仅仅只是一个俄梅戛字母，而是一个名字。因此它与希腊文里最后一个字母是有区别的。 
+                    让我们回到罗马书2:1:你这论断人的，无论你是谁，也无可推诿，你在什么事上论断人，就在
+                    什么事上定自己的罪。因你这论断人的，自己所行却和别人一样。【英：所以你无可推诿，
+                    2 / 182 O 你这论断人的，无论你是谁：你在什么事上论断人，就在什么事上定自己的罪。因你这论断
+                    人的，自己所行却和别人一样。】</p>
+                <p>你知道，我们必须问一个问题。在阐述了第1章之后，为什么神在这一时刻告诉我们这一
+                    点？特别是因为神说祂已经任凭他们存邪僻的心行那些不合理的事。然后，祂列出了23个污秽
+                    的罪。现在，我们是末时在世的神的子民，我们认识到数字“ 23”是关于“灾难”或“审判”
+                    的数字。我们知道，我们生活在一个以前克制着人类罪恶的圣灵松开了克制之手，结果，人类拥
+                    有一颗极度邪恶的心的状况展现了出来。所有人都能清楚地看到神的话语圣经里的这个真理，关
+                    于人类堕落的状况如何肮脏和邪恶。罪恶遍及整个地球，不可想像的邪恶在四处蔓延。不仅在纽
+                    约，洛杉矶和旧金山等主要城市，而且在每个城市，都在做最可怕、恐惧的事。它不仅在北美，
+                    而且在欧洲，南美，澳大利亚和非洲，等等。人们正在整个地球上做这些可怕的，丑陋的，罪恶
+                    的事情，这是末日神计划的一部分。帖撒罗尼迦前书2是什么描述的？引用圣经经文总是更恰
+                    当。我们在帖撒罗尼迦后书 2：6中读到：现在你们也知道那拦阻他的是什么，是叫他到了的
+                    时候，才可以显露。因为那不法的隐意已经发动。只是现在有一个拦阻的（圣灵），等到那拦
+                    阻的被除去【英：挪去】。</p>
+                <p>神已将祂的圣灵挪去。这“不法的隐意”一直是，根据耶利米书17：9，如果人心是这样坏
+                    到极点，那他为什么做出许多基本得体，道德的事呢？他如何以相对良好的方式表现自己？圣经
+                    会给出的答案是，因为圣灵一直“拦阻”着那诡诈而可怕的邪恶之心，直到末时。因此，圣灵一
+                    直在约束（罪孽），直到祂被挪去。现在，关于罪的“隐意”不再存在，因为当我们读耶利米
+                    书17：9时，我们几乎再也听不到任何人说：“嗯，人心比万物都诡诈，坏到极处。我不认为
+                    是这样的。 ”我不想绝对地说，但我们很少能找到一个足够盲目的尝试为人类品格辩护的
+                    人：</p>
+                <p>神已将祂的圣灵挪去。这“不法的隐意”一直是，根据耶利米书17：9，如果人心是这样坏
+                    到极点，那他为什么做出许多基本得体，道德的事呢？他如何以相对良好的方式表现自己？圣经
+                    会给出的答案是，因为圣灵一直“拦阻”着那诡诈而可怕的邪恶之心，直到末时。因此，圣灵一
+                    直在约束（罪孽），直到祂被挪去。现在，关于罪的“隐意”不再存在，因为当我们读耶利米
+                    书17：9时，我们几乎再也听不到任何人说：“嗯，人心比万物都诡诈，坏到极处。我不认为
+                    是这样的。 ”我不想绝对地说，但我们很少能找到一个足够盲目的尝试为人类品格辩护的
+                    人：</p>
+                <p>实际上，神会允许这种“功劳”归于某人，因为创世记20章记载一个叫亚比米勒的王的例
+                    子，当时王差人带走了撒拉却没有与她亲近，他后来对耶和华说： ……我作这事是心正手洁
+                    的。”耶和华同意他的说法，然后说：“我知道你作这事是心中正直。我也拦阻了你，免得你得
+                    罪我，所以我不容你沾着她。”因此，确实有个因素神允许人获得一些功劳。 </p>
+                <p>但是现在到目前的末时，神已经解除了约束的手，我们正看到带着本性的罪人，这可不是一副亮
+                    丽的风景线，是吗？当我们看到罪人的心被暴露时，这不是一幅漂亮的图画。至少这肯定不是一
+                    幅漂亮的图画。这正证明和见证圣经的真理。而且，您知道，唯独圣经这样正面谴责人的本性，
+                    其他宗教则试图讨好人，迎合人的本性，阐述讨人喜欢的话讲。 “只要相信我们的宗教，那就
+                    是进入天堂你需要做的一切。”但是，只有圣经谴责人，审判人，并宣告他是肮脏，腐烂，诡
+                    诈，邪恶和堕落的。关于人类，圣经说他是歪曲和变态的，神还使用许多其他可怕的描述来形容
+                    背叛祂的罪人。难怪有血气的人会避开圣经。他们不想听到这些事情。他们想对自己和他们的同
+                    胞以及他们的孩子和家庭有一个好的印象，但是神并没有有所隐瞒，祂全盘告诉了我们人类的真
+                    实情况。 </p>
+                <p>对于那些祂所吸引的人，我们无法逃避（因为神不允许我们逃避），我们看到了自己的罪
+                    孽，而且我们可以会很长时间处于相当痛苦的状态，因为我们可能会像使徒保罗在罗马书7:24
+                    那样认识到：我真是苦阿，谁能救我脱离这取死的身体呢？</p>
+                <p>对于那些祂所吸引的人，我们无法逃避（因为神不允许我们逃避），我们看到了自己的罪
+                    孽，而且我们可以会很长时间处于相当痛苦的状态，因为我们可能会像使徒保罗在罗马书7:24
+                    那样认识到：我真是苦阿，谁能救我脱离这取死的身体呢？</p>
+                <p>我们每一个人都被包括在内——每一个人。这是对我们每一个讲的。我们不可认为，“哦，这并
+                    不适用于我。”有人可能会说：“嗯，这只适用我得救之前。” 不，我们不能这么说。 我们
+                    刚刚读到使徒保罗得救后的感想，他自认是个可怜的人：“我真是苦啊！” 因此，正如神在下
+                    一章罗马书 3：10-12中一样，对我们所有人说话：就如经上所记，没有义人，连一个也没
+                    有。没有明白的，没有寻求神的。都是偏离正路，一同变为无用。没有行善的，连一个也没
+                    有。</p>
+                    <p>就是为了重申这个事实，即得救后，信徒不是就可以能“坐在审判台上”，指责未得救的人
+                        类。 没有人能做到这一点——连选民也不能。 神在传道书7:20中宣布：时常行善而不犯罪
+                        的义人，世上实在没有。 </p>
+                    <p>世上没有一个义人。 唯一可以被视为“义”人是那些因一个的顺从而白白称义的，而不是
+                        自己的顺从而成为义人。 这些就是“少数”，是全人类的剩余者。 因此，这意味着绝大多数
+                        人不是义人，他们仍然在罪孽里视为肮脏。 而且，当我们看着人类中这少数的选民时，神说世
+                        上没有行善不犯罪的人。 每个人都仍在犯罪，甚至选民也是。选民是在肉体上犯罪：“我真是
+                        苦阿，谁能救我脱离这取死的身体呢？”神的选民的身体尚未被赎回或转变。肉体还没得到拯
+                        救，因此继续犯罪，这就是我们在约翰一书1：10中读到的原因：我们若说自己没有犯过罪，
+                        便是以神为说谎的。他的道也不在我们心里了。</p>
+                    <p>所有人都犯了罪。所有人在继续犯罪——地球上每一个人——这使每一个人都不适合去论断
+                        【注：论断与审判英文是同一个词】。我们没有资格去论断或者审判我们的同胞，因为我们也是
+                        罪人。首先，在得救之前，我们在生命里中不是圣人（甚至更差）。在得救之后，我们也继续犯
+                        罪，所以地球上没有人有资格可以坐在审判席上，并询查别人，即使那位是你能想象中最坏的罪
+                        人。其实，如果我们阅读圣经并在圣经的这幅镜子前照看，最坏的罪人就是我们自己，正如使徒
+                        保罗意识到的那样：“基督耶稣降世，为要拯救罪人。。。在罪人中我是个罪魁。”在那组罪人
+                        中，保罗说：“我是罪魁。”也就是说，他首先是最大的罪人。那不是恭维。在基督要拯救的一
+                        切中，他是最坏的罪人，这句话对你我来说都是“是十分可佩服的【英：值得全部接受的】”。
+                        那么你或我或任何一个值得接受这个“罪魁”说法的人怎么敢坐在其他人的审判【论断】台上
+                        呢？</p>
+                    <p>正是因为世界上有许多罪孽，神才在祂所放置的这个上下文里（在我们的时代）指出这一
+                        点，所以我们没有人可以看着世界，嘲笑并且愤怒地说：“哦，外面这些人正在做这些（邪恶
+                        的）事情，这使我的灵忧伤，我为他们生气！”我们不能像愤怒的神那样扮演审判官的角色——
+                        这不是我们的职责。我们必须看到自己和他们是一样也是罪人。我们必须看到自己只是被神的恩
+                        典和怜悯所拯救，并不配得，也不值得。我们不配得到新的心。我们不配拥有一个新的复活身体
+                        的盼望。我们不配获得永生。我们得罪和违反了神的律法。我们本应得死。如果没有神的恩典，
+                        我们应该已经死了。因此，我们必须注意，永远不要说我们从审判（论断）的角度看着我们同胞
+                        的人类。</p>
+                    <p>我们在雅各书4:10-12读到：务要在主面前自卑，主就必叫你们升高。弟兄们，你们不可
+                        彼此批评。人若批评弟兄，论断弟兄，就是批评律法，论断律法。你若论断律法，就不是遵行
+                        律法，乃是判断人的。设立律法和判断人的，只有一位，就是那能救人也能灭人的。你是谁，
+                        竟敢论断别人呢？</p>
+                    <p>（世上）只有一位设立律法者，一位审判（判断）人的，而那位审判官可以拯救人，也可以
+                        毁灭人。圣经说到以下阐述是有道理的：“主说，伸冤【英：报仇】在我。我必报应。”神必报
+                        应。耶和华必报仇。祂是被得罪的一方。祂是忌邪愤怒中的那位人子，将对奸淫的女人（人类）
+                        进行报仇。神会得到自己的满足。祂将在法老和埃及人，撒但以及地球上未得救的世人身上得到
+                        荣耀。在这方面，祂并不需要我们的帮助，也不需要我们试图与祂一起分享审判宝座，我们试图
+                        在审判台上就座好像我们是统治者和设立律法者一样，好像我们也被得罪，必须对我们的同伴做
+                        出正确的审判。</p>
+                    <p>是的——圣徒将审判世界，但不是通过这种方式。基督已经带着祂的“千万圣者”降临了，
+                        但祂独自坐在宝座上。从这个意义上讲，没有一个圣者通过指责并谴责其他任何人来审判（论
+                        断）。我们不这样做。神的子民确实参与审判，但是我们在审判过程中的作用仅仅是分享圣经所
+                        说的话，神的道的真理。我们与在神的愤怒之下的同胞，分享仁慈，温柔，爱，同情和悲伤。我
+                        们以前也曾在这同样的神的愤怒之下，然而我们得到了神的恩典。</p>
+                <!-- 更多内容可以继续添加 -->
+            </div>
+        </div>
+
+        <div id="verse2-window" class="verse-window">
+            <div class="window-content">
+                <span class="close-button" onclick="closeVerse('verse2')">✖</span>
+                <h1>罗马书2章(2)</h1>
+                <p>我们知道这样行审判的人，神必照真理审判他。</p>
+                <!-- 更多内容可以继续添加 -->
+            </div>
+        </div>
+
+        <!-- 其他章节窗口按照类似的方式添加 -->
+
+    </div>
+
+    <script>
+        // 切换折叠列表的显示状态
+        function toggleCollapse() {
+            var collapseList = document.getElementById('collapse-list');
+            if (collapseList.style.display === 'none') {
+                collapseList.style.display = 'block';
+            } else {
+                collapseList.style.display = 'none';
+            }
+        }
+
+        // 打开节内容窗口
+        function openVerse(id) {
+            var verseWindow = document.getElementById(id + '-window');
+            verseWindow.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // 隐藏页面滚动条
+        }
+
+        // 关闭节内容窗口
+        function closeVerse(id) {
+            var verseWindow = document.getElementById(id + '-window');
+            verseWindow.style.display = 'none';
+            document.body.style.overflow = 'auto'; // 恢复页面滚动条
+        }
+    </script>
+</body>
+</html>
+
+
+</html>
+
+    <style>
+        .social_media_div {
+            background-color: #333;
+            padding: 5px;
+        }
+
+        .text-block-277 {
+            color: white;
+            font-size: 5px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .social-media-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .social-icon {
+            display: block;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .social-icon img {
+            width: 30px;
+            height: 30px;
+            border-radius: 20%;
+        }
+        /* Reset basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .navbar {
+            background-color: #333;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 20px;
+            z-index: 10;
+            overflow-y: auto; /* Allow vertical scrolling */
+            height: 100vh; /* Set sidebar height to full viewport height */
+        }
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .navbar ul li {
+            padding: 10px 0;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            display: block;
+            width: 100%;
+        }
+        .navbar ul li img {
+            max-height: 100%;
+            width: auto;
+        }
+        .image-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+            position: relative;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .special-link {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .special-link a {
+            display: block;
+        }
+        .special-link img {
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html"><img src="picture/1.png" alt="图片1"></a></li>
+            <li><a href="index.html"><img src="picture/2.png" alt="图片1"></a></li>
+            <li>
+                <div class="webplayersidebar w-embed w-iframe">
+                    <iframe src="https://ebiblefellowshipcn.airtime.pro/embed/player?stream=auto&amp;skin=2" style="width: 100%; height: 280px; border: 0;"></iframe>
+                </div>
+                <div class="div-block-477">
+                </div>
+            </li>
+            <li><a href="lag.html"><img src="picture/5.png" alt="图片5" style="width: 150px; height: 150px;"></a></li>
+            <li><a href="music.html"><img src="picture/8.png" alt="图片5" style="width: 150px; height: 150px;"></a></li>
+            <li><a href="audio.html"><img src="picture/10.png" alt="图片5" style="width: 150px; height: 150px;"></a></li>
+            <li><a href="docs.html"><img src="picture/11.png" alt="图片5" style="width: 150px; height: 150px;"></a></li>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子圣经团契平台</title>
+    <style>
+        /* CSS Styles */
+        .sidebarplayer {
+            margin-top: 20px;
+        }
+
+        .social_media_div {
+            background-color: #333;
+            padding: 20px;
+        }
+
+        .text-block-277 {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .social-media-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .social-icon {
+            display: block;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .social-icon img {
+            width: 60px;
+            height: auto;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML Content -->
+    <div class="sidebarplayer">
+        <div class="平台">
+            <div class="text-block-277">电子圣经团契平台</div>
+            <div class="social-media-icons">
+                <!-- Social Media Links -->
+                <a href="https://open.spotify.com/show/2QaYhjDxUM6TYcFZS1k25N" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440b2a52109333083e44f54_Spotify.webp" loading="lazy" alt="Spotify">
+                </a>
+                <a href="https://www.facebook.com/groups/ebiblefellowship/" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db755bc4ca70c8e57498_FB.png" loading="lazy" alt="Facebook">
+                </a>
+                <a href="https://www.youtube.com/user/EBibleFellowship1" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440d57ccd89fab920584ec0_youtubeicon.png" loading="lazy" alt="YouTube">
+                </a>
+                <a href="https://twitter.com/EBF2033" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/657b55839ab20542b815bdbe_X%20Icon.png" loading="lazy" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com/ebiblefellowship/" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db7487dd9337a041dfa7_IG.png" loading="lazy" alt="Instagram">
+                </a>
+                <a href="https://www.tiktok.com/@ebiblefellowship" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db745bc4ca878de57491_TT%201.png" loading="lazy" alt="TikTok">
+                </a>
+                <a href="https://discord.com/channels/1107029577584357417/1107029578528067736" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6462c6bb815a6c64b3b50cb0_Discord.png" loading="lazy" alt="Discord">
+                </a>
+                <a href="https://www.quora.com/profile/E-Bible-Fellowship" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db73cd89fa1b3858adc0_Q.png" loading="lazy" alt="Quora">
+                </a>
+                <a href="https://www.twitch.tv/ebiblefellowship" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6462c6bb2defc311f88e1282_Twitch%20Icon.png" loading="lazy" alt="Twitch">
+                </a>
+                <a href="https://www.reddit.com/user/EBibleFellowship" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db74ade4cfe5730fe837_RD.png" loading="lazy" alt="Reddit">
+                </a>
+                <a href="https://vimeo.com/ebfworldwide" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db732109330e88e726b6_VM.png" loading="lazy" alt="Vimeo">
+                </a>
+                <a href="https://www.tumblr.com/login?redirect_to=%2Fblog%2Febiblefellowship" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db7387dd931b2141dfa2_Tum.png" loading="lazy" alt="Tumblr">
+                </a>
+                <a href="https://odysee.com/@ebiblefellowship:b" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/644b08abda92113d55570c09_118271847-5d274d80-b4b1-11eb-86e5-484c2319b43f.png" loading="lazy" alt="Odysee">
+                </a>
+                <a href="https://truthsocial.com/@EBF2033" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6462c6bc3aa4f2e8f8b6a543_truth-social.png" loading="lazy" alt="Truth Social">
+                </a>
+                <a href="https://www.linkedin.com/company/ebiblefellowship" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6462c6bb78af7c8e5414c8b9_LinkedIn.png" loading="lazy" alt="LinkedIn">
+                </a>
+                <a href="https://rumble.com/c/c-2661762" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/644b08a89881d74abfce9d5d_Rumble%20icon.png" loading="lazy" alt="Rumble">
+                </a>
+                <a href="https://gab.com/EBF" target="_blank" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db7571df4867aa5bf745_Gab.png" loading="lazy" alt="Gab">
+                </a>
+   <!-- 添加联系方式 -->
+   <div class="contact-info" style="margin-top: auto; padding: 20px;">
+    <h3>联系我们</h3>
+    <p><span style="color: rgb(49, 134, 247);">联系方式:</span> <a href="mailto:info@eBibleFellowship.org" style="color: blue;">info@eBibleFellowship.org</a></p>
+    <p><span style="color: rgb(70, 135, 255);">地址:</span>
+        <p>.O. Box 1393<p>
+        <p>Sharon Hill, PA 19079-0593 USA<br></p>
+        <p>© 2024 eBibleFellowship<br><p></p>
+</div>
+</div>

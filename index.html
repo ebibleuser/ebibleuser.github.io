@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子圣经团契中文网</title>
+    <style>
+        /* Reset basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 20px;
+            z-index: 1000;
+            overflow-y: auto; /* Allow vertical scrolling */
+            height: 100vh; /* Set sidebar height to full viewport height */
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .navbar ul li {
+            padding: 10px 0;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            display: block;
+            width: 100%;
+        }
+
+        .navbar ul li img {
+            max-height: 100%;
+            width: auto;
+        }
+
+        .image-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .special-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .special-links a {
+            margin: 10px;
+        }
+
+        .special-links img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .webplayersidebar {
+            margin-top: 20px;
+            width: 100%; /* Ensure the iframe takes full width */
+            text-align: center; /* Center iframe horizontally */
+        }
+
+        .webplayersidebar iframe {
+            width: 100%;
+            height: 280px;
+            border: 0;
+        }
+
+        .social-media-icons {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; /* Push to the bottom */
+        }
+
+        .social-media-icons a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-media-icons img {
+            width: 60px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .contact-info {
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-info h3 {
+            color: rgb(49, 134, 247);
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: blue;
+        }
+
+        /* Media query for responsive design */
+        @media screen and (max-width: 768px) {
+            /* Small devices (tablets, 768px and down) */
+            .navbar {
+                display: none; /* Hide the sidebar */
+            }
+
+            .special-links {
+                margin-top: 50px; /* Adjust margin for image section */
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            /* Large devices (desktops, 769px and up) */
+            .navbar {
+                display: flex; /* Display the sidebar */
+            }
+
+            .special-links {
+                display: none; /* Hide the special links section */
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html"><img src="picture/1.png" alt="图片1"></a></li>
+            <li><a href="index.html"><img src="picture/2.png" alt="图片2"></a></li>
+            <li>
+                <div class="webplayersidebar">
+                    <iframe src="https://ebiblefellowshipcn.airtime.pro/embed/player?stream=auto&amp;skin=2" style="width: 100%; height: 280px; border: 0;"></iframe>
+                </div>
+            </li>
+            <li><a href="lag.html"><img src="picture/5.png" alt="图片5" style="width: 150px; height: 150px;"></a></li>
+            <li><a href="music.html"><img src="picture/8.png" alt="图片8" style="width: 150px; height: 150px;"></a></li>
+            <li><a href="audio.html"><img src="picture/10.png" alt="图片10" style="width: 150px; height: 150px;"></a></li>
+            <li><a href="docs.html"><img src="picture/11.png" alt="图片11" style="width: 150px; height: 150px;"></a></li>
+            <li><a href="biblebook.html"><img src="picture/12.png" alt="图片12" style="width: 150px; height: 150px;"></a></li>
+        </ul>
+        <div class="social-media-icons">
+            <a href="https://open.spotify.com/show/2QaYhjDxUM6TYcFZS1k25N" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440b2a52109333083e44f54_Spotify.webp" loading="lazy" alt="Spotify">
+            </a>
+            <a href="https://www.facebook.com/groups/ebiblefellowship/" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db755bc4ca70c8e57498_FB.png" loading="lazy" alt="Facebook">
+            </a>
+            <a href="https://www.youtube.com/user/EBibleFellowship1" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440d57ccd89fab920584ec0_youtubeicon.png" loading="lazy" alt="YouTube">
+            </a>
+            <a href="https://twitter.com/EBF2033" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/657b55839ab20542b815bdbe_X%20Icon.png" loading="lazy" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com/ebiblefellowship/" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db7487dd9337a041dfa7_IG.png" loading="lazy" alt="Instagram">
+            </a>
+            <a href="https://www.tiktok.com/@ebiblefellowship" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db745bc4ca878de57491_TT%201.png" loading="lazy" alt="TikTok">
+            </a>
+            <a href="https://discord.com/channels/1107029577584357417/1107029578528067736" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db7371df48b9d35bf732_DS.png" loading="lazy" alt="Discord">
+            </a>
+            <a href="https://www.quora.com/profile/E-Bible-Fellowship" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db73cd89fa1b3858adc0_Q.png" loading="lazy" alt="Quora">
+            </a>
+            <a href="https://www.twitch.tv/ebiblefellowship" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6462c6bb2defc311f88e1282_Twitch%20Icon.png" loading="lazy" alt="Twitch">
+            </a>
+            <a href="https://www.reddit.com/user/EBibleFellowship" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db74ade4cfe5730fe837_RD.png" loading="lazy" alt="Reddit">
+            </a>
+            <a href="https://vimeo.com/ebfworldwide" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db732109330e88e726b6_VM.png" loading="lazy" alt="Vimeo">
+            </a>
+            <a href="https://www.tumblr.com/login?redirect_to=%2Fblog%2Febiblefellowship" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db7387dd931b2141dfa2_Tum.png" loading="lazy" alt="Tumblr">
+            </a>
+            <a href="https://odysee.com/@ebiblefellowship:b" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/644b08abda92113d55570c09_118271847-5d274d80-b4b1-11eb-86e5-484c2319b43f.png" loading="lazy" alt="Odysee">
+            </a>
+            <a href="https://truthsocial.com/@EBF2033" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6462c6bc3aa4f2e8f8b6a543_truth-social.png" loading="lazy" alt="Truth Social">
+            </a>
+            <a href="https://www.linkedin.com/company/ebiblefellowship" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6462c6bb78af7c8e5414c8b9_LinkedIn.png" loading="lazy" alt="LinkedIn">
+            </a>
+            <a href="https://rumble.com/c/c-2661762" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/644b08a89881d74abfce9d5d_Rumble%20icon.png" loading="lazy" alt="Rumble">
+            </a>
+            <a href="https://gab.com/EBF" target="_blank" class="social-icon">
+                <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db7571df4867aa5bf745_Gab.png" loading="lazy" alt="Gab">
+            </a>
+        </div>
+        <div class="contact-info">
+            <h3>联系我们</h3>
+            <p><span style="color: rgb(49, 134, 247);">联系方式:</span> <a href="mailto:info@eBibleFellowship.org" style="color: blue;">info@eBibleFellowship.org</a></p>
+            <p><span style="color: rgb(70, 135, 255);">地址:</span></p>
+            <p>P.O. Box 1393</p>
+            <p>Sharon Hill, PA 19079-0593 USA</p>
+            <p>© 2024 eBibleFellowship</p>
+        </div>
+    </div>
+
+    <div class="image-section">
+        <a href="https://newopenforum.org"><img src="picture/7.png" alt="图片7">       
+        <div class="special-links">
+            <li>
+                <div class="webplayersidebar">
+                    <iframe src="https://ebiblefellowshipcn.airtime.pro/embed/player?stream=auto&amp;skin=2" style="width: 100%; height: 280px; border: 0;"></iframe>
+                </div>
+
+            <a href="https://lag.html"><img src="picture/5.png" alt="图片5"></a>
+            <a href="https://music.html"><img src="picture/8.png" alt="图片8"></a>
+            <a href="https://audio.html"><img src="picture/10.png" alt="图片10"></a>
+            <a href="https://docs.html"><img src="picture/11.png" alt="图片11"></a>
+            <a href="https://biblebook.html"><img src="picture/12.png" alt="图片12"></a>
+        </div>
+    </div>
+
+</body>
+</html>
