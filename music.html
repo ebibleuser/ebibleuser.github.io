@@ -9,7 +9,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 
     <style>
-        /* Main Styles */
+        /* Reset Styles */
+        body, h1, h2, h3, h4, h5, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #333333;
@@ -135,6 +140,11 @@
             z-index: 1000;
             overflow-y: auto; /* Allow vertical scrolling */
             height: 100vh; /* Set sidebar height to full viewport height */
+            transition: transform 0.3s ease; /* Smooth transition for sidebar */
+        }
+
+        .navbar.closed {
+            transform: translateX(-100%);
         }
 
         .navbar ul {
@@ -450,5 +460,10 @@
     </script>
 
 </body>
-
+<script>
+    const toggleSidebar = () => {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('closed');
+    }
+</script>
 </html>
