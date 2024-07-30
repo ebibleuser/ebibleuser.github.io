@@ -58,8 +58,170 @@
             font-size: 1.5em;
             cursor: pointer;
         }
+            /* Reset basic styles */
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 20px;
+            z-index: 1000;
+            overflow-y: auto; /* Allow vertical scrolling */
+            height: 100vh; /* Set sidebar height to full viewport height */
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .navbar ul li {
+            padding: 10px 0;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            display: block;
+            width: 100%;
+        }
+
+        .navbar ul li img {
+            max-height: 100%;
+            width: auto;
+        }
+
+        .image-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .special-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .special-links a {
+            margin: 10px;
+        }
+
+        .special-links img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .webplayersidebar {
+            margin-top: 20px;
+            width: 100%; /* Ensure the iframe takes full width */
+            text-align: center; /* Center iframe horizontally */
+        }
+
+        .webplayersidebar iframe {
+            width: 100%;
+            height: 280px;
+            border: 0;
+        }
+
+        .social-media-icons {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; /* Push to the bottom */
+        }
+
+        .social-media-icons a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-media-icons img {
+            width: 60px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .contact-info {
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-info h3 {
+            color: rgb(49, 134, 247);
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: blue;
+        }
+
+        /* Media query for responsive design */
+        @media screen and (max-width: 768px) {
+            /* Small devices (tablets, 768px and down) */
+            .navbar {
+                display: none; /* Hide the sidebar */
+            }
+
+            .special-links {
+                margin-top: 50px; /* Adjust margin for image section */
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            /* Large devices (desktops, 769px and up) */
+            .navbar {
+                display: flex; /* Display the sidebar */
+            }
+
+            .special-links {
+                display: none; /* Hide the special links section */
+            }
+        }
     </style>
 </head>
+<body>
+    <!-- Home Button -->
+    <a href="https://ebibleuser.github.io" class="home-button">
+        <span>🏠</span><span>首页</span>
+    </a>
 
 <body>
     <div class="content">
@@ -400,6 +562,7 @@
             <li><a href="music.html"><img src="picture/8.png" alt="图片5" style="width: 150px; height: 150px;"></a></li>
             <li><a href="audio.html"><img src="picture/10.png" alt="图片5" style="width: 150px; height: 150px;"></a></li>
             <li><a href="docs.html"><img src="picture/11.png" alt="图片5" style="width: 150px; height: 150px;"></a></li>
+            <li><a href="biblebook.html"><img src="picture/12.png" alt="图片5" style="width: 150px; height: 150px;"></a></li>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>电子圣经团契平台</title>
@@ -508,3 +671,21 @@
         <p>© 2024 eBibleFellowship<br><p></p>
 </div>
 </div>
+<div class="image-section">
+    <a href="https://newopenforum.org"><img src="picture/7.png" alt="图片7">       
+    <div class="special-links">
+        <li>
+            <div class="webplayersidebar">
+                <iframe src="https://ebiblefellowshipcn.airtime.pro/embed/player?stream=auto&amp;skin=2" style="width: 100%; height: 280px; border: 0;"></iframe>
+            </div>
+
+        <a href="https://lag.html"><img src="picture/5.png" alt="图片5"></a>
+        <a href="https://music.html"><img src="picture/8.png" alt="图片8"></a>
+        <a href="https://audio.html"><img src="picture/10.png" alt="图片10"></a>
+        <a href="https://docs.html"><img src="picture/11.png" alt="图片11"></a>
+        <a href="https://biblebook.html"><img src="picture/12.png" alt="图片12"></a>
+    </div>
+</div>
+
+</body>
+</html>

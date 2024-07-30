@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,117 +8,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 
     <style>
-        /* Main Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #333333;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
+        /* Reset basic styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        .container {
-            width: calc(100% - 250px); /* Adjusted width considering sidebar width */
-            max-width: 800px;
-            background-color: #333333;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .music-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .music-item {
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .music-item:last-child {
-            border-bottom: none;
-        }
-
-        .music-item img {
-            width: 100px;
-            height: auto;
-            float: left;
-            margin-right: 20px;
-        }
-
-        .music-info {
-            overflow: hidden;
-        }
-
-        .music-title {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .music-artist {
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .music-genre {
-            font-style: italic;
-            color: #888;
-        }
-
-        .aplayer-wrapper {
-            margin-top: 20px;
-        }
-
-        .aplayer-info {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 10px;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
-        .aplayer-info .aplayer-icon {
-            cursor: pointer;
-            font-size: 20px;
-            color: white;
-            margin-right: 10px;
-        }
-
-        .aplayer-lrc-toggle {
-            color: white;
-            cursor: pointer;
-        }
-
-        .aplayer-lrc-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .aplayer-lrc-content.show {
-            max-height: 200px; /* Adjusted height for lyrics display */
-        }
-
-        .aplayer-download {
-            display: inline-block;
-            padding: 5px 10px;
-            background-color: #3487f3;
-            color: white;
-            text-decoration: none;
-            margin-top: 10px;
-            border-radius: 4px;
-        }
-
-        /* Sidebar Styles */
         .navbar {
             background-color: #333;
             width: 250px;
@@ -135,6 +42,11 @@
             z-index: 1000;
             overflow-y: auto; /* Allow vertical scrolling */
             height: 100vh; /* Set sidebar height to full viewport height */
+            transition: transform 0.3s ease;
+        }
+
+        .navbar.hidden {
+            transform: translateX(-100%);
         }
 
         .navbar ul {
@@ -161,387 +73,278 @@
             width: auto;
         }
 
-        .image-section {
+        .special-links {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            flex-direction: column;
             margin-top: 20px;
-            position: relative;
         }
 
-        .image-section img {
-            max-width: 100%;
+        .special-links a {
+            margin: 10px;
+        }
+
+        .special-links img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .webplayersidebar {
+            margin-top: 20px;
+            width: 100%; /* Ensure the iframe takes full width */
+            text-align: center; /* Center iframe horizontally */
+        }
+
+        .webplayersidebar iframe {
+            width: 100%;
+            height: 280px;
+            border: 0;
+        }
+
+        .social-media-icons {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; /* Push to the bottom */
+        }
+
+        .social-media-icons a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-media-icons img {
+            width: 60px;
             height: auto;
+            border-radius: 50%;
+        }
+
+        .contact-info {
+            padding: 20px;
+            text-align: center;
             margin-top: 20px;
         }
 
-        .special-link {
+        .contact-info h3 {
+            color: rgb(49, 134, 247);
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: blue;
+        }
+
+        /* Media query for responsive design */
+        @media screen and (max-width: 768px) {
+            /* Small devices (tablets, 768px and down) */
+            .navbar {
+                display: none; /* Hide the sidebar */
+            }
+
+            .special-links {
+                margin-top: 50px; /* Adjust margin for image section */
+            }
+
+            .collapse-container {
+                width: 100%; /* Full width for mobile devices */
+                padding-left: 0; /* No padding needed on mobile */
+                text-align: center; /* Center the content */
+            }
+
+            .collapse-button {
+                font-size: 16px; /* Smaller font size for mobile */
+                padding: 8px; /* Smaller padding for mobile */
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            /* Large devices (desktops, 769px and up) */
+            .navbar {
+                display: flex; /* Display the sidebar */
+            }
+
+            .special-links {
+                display: none; /* Hide the special links section */
+            }
+        }
+
+        /* Style for the home button */
+        .home-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 100px;
+            height: 50px;
+            background-color: #333;
+            color: white;
             display: flex;
+            align-items: center;
             justify-content: center;
-            margin-top: 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 18px;
+            text-decoration: none;
+            z-index: 1001;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            display: none; /* Initially hidden */
         }
 
-        .special-link a {
+        .home-button:hover {
+            background-color: #555;
+        }
+
+        .home-button span {
             display: block;
         }
 
-        .special-link img {
-            width: auto;
-            height: auto;
+        /* Responsive layout for home button on different screen orientations */
+        @media screen and (orientation: portrait) {
+            .navbar.hidden {
+                display: none; /* Hide the sidebar on portrait orientation */
+            }
+
+            .home-button {
+                display: block; /* Ensure home button is visible */
+            }
+        }
+        
+        /* APlayer custom styles */
+        #aplayer {
+            color: black !important; /* Change text color to black */
+        }
+
+        .collapse-container {
+            margin: 20px;
+            text-align: center; /* Center the content */
+        }
+
+        .collapse-content {
+            display: none;
+            margin-top: 20px; /* Add some spacing above the player */
+        }
+
+        .collapse-button {
+            cursor: pointer;
+            font-size: 18px;
+            color: #007bff;
+            padding: 10px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            text-align: center;
+            user-select: none;
+        }
+
+        .collapse-button:hover {
+            background-color: #e7f0ff;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 20px;
+            text-align: center;
         }
     </style>
 </head>
-
 <body>
+    <!-- Home Button -->
+    <a href="https://ebibleuser.github.io" class="home-button">
+        <span>🏠</span><span>首页</span>
+    </a>
+
     <!-- Sidebar -->
     <div class="navbar">
         <ul>
             <li><a href="index.html"><img src="picture/1.png" alt="图片1"></a></li>
-            <li><a href="index.html"><img src="picture/2.png" alt="图片1"></a></li>
+            <li><a href="index.html"><img src="picture/2.png" alt="图片2"></a></li>
             <li>
-                <div class="webplayersidebar w-embed w-iframe">
+                <div class="webplayersidebar">
                     <iframe src="https://ebiblefellowshipcn.airtime.pro/embed/player?stream=auto&amp;skin=2" style="width: 100%; height: 280px; border: 0;"></iframe>
-                </div>
-                <div class="div-block-477">
                 </div>
             </li>
             <li><a href="lag.html"><img src="picture/5.png" alt="图片5" style="width: 150px; height: 150px;"></a></li>
-            <li><a href="music.html"><img src="picture/8.png" alt="图片5" style="width: 150px; height: 150px;"></a></li>
-            <li><a href="docs.html"><img src="picture/11.png" alt="图片5" style="width: 150px; height: 150px;"></a></li>
-            <li><a href="audio.html"><img src="picture/10.png" alt="图片5" style="width: 150px; height: 150px;"></a></li>
-            <style>
-                /* CSS Styles */
-                .sidebarplayer {
-                    margin-top: 20px;
-                }
-        
-                .social_media_div {
-                    background-color: #333;
-                    padding: 20px;
-                }
-        
-                .text-block-277 {
-                    color: white;
-                    font-size: 18px;
-                    font-weight: bold;
-                    margin-bottom: 10px;
-                }
-        
-                .social-media-icons {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-around;
-                }
-        
-                .social-icon {
-                    display: block;
-                    text-align: center;
-                    margin-bottom: 15px;
-                }
-        
-                .social-icon img {
-                    width: 60px;
-                    height: auto;
-                    border-radius: 50%;
-                }
-            </style>
-        </head>
-        <body>
-            <!-- HTML Content -->
-            <div class="sidebarplayer">
-                <div class="平台">
-                    <div class="text-block-277">电子圣经团契平台</div>
-                    <div class="social-media-icons">
-                        <!-- Social Media Links -->
-                        <a href="https://open.spotify.com/show/2QaYhjDxUM6TYcFZS1k25N" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440b2a52109333083e44f54_Spotify.webp" loading="lazy" alt="Spotify">
-                        </a>
-                        <a href="https://www.facebook.com/groups/ebiblefellowship/" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db755bc4ca70c8e57498_FB.png" loading="lazy" alt="Facebook">
-                        </a>
-                        <a href="https://www.youtube.com/user/EBibleFellowship1" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440d57ccd89fab920584ec0_youtubeicon.png" loading="lazy" alt="YouTube">
-                        </a>
-                        <a href="https://twitter.com/EBF2033" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/657b55839ab20542b815bdbe_X%20Icon.png" loading="lazy" alt="Twitter">
-                        </a>
-                        <a href="https://www.instagram.com/ebiblefellowship/" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db7487dd9337a041dfa7_IG.png" loading="lazy" alt="Instagram">
-                        </a>
-                        <a href="https://www.tiktok.com/@ebiblefellowship" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db745bc4ca878de57491_TT%201.png" loading="lazy" alt="TikTok">
-                        </a>
-                        <a href="https://discord.com/channels/1107029577584357417/1107029578528067736" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6462c6bb815a6c64b3b50cb0_Discord.png" loading="lazy" alt="Discord">
-                        </a>
-                        <a href="https://www.quora.com/profile/E-Bible-Fellowship" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db73cd89fa1b3858adc0_Q.png" loading="lazy" alt="Quora">
-                        </a>
-                        <a href="https://www.twitch.tv/ebiblefellowship" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6462c6bb2defc311f88e1282_Twitch%20Icon.png" loading="lazy" alt="Twitch">
-                        </a>
-                        <a href="https://www.reddit.com/user/EBibleFellowship" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db74ade4cfe5730fe837_RD.png" loading="lazy" alt="Reddit">
-                        </a>
-                        <a href="https://vimeo.com/ebfworldwide" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db732109330e88e726b6_VM.png" loading="lazy" alt="Vimeo">
-                        </a>
-                        <a href="https://www.tumblr.com/login?redirect_to=%2Fblog%2Febiblefellowship" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db7387dd931b2141dfa2_Tum.png" loading="lazy" alt="Tumblr">
-                        </a>
-                        <a href="https://odysee.com/@ebiblefellowship:b" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/644b08abda92113d55570c09_118271847-5d274d80-b4b1-11eb-86e5-484c2319b43f.png" loading="lazy" alt="Odysee">
-                        </a>
-                        <a href="https://truthsocial.com/@EBF2033" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6462c6bc3aa4f2e8f8b6a543_truth-social.png" loading="lazy" alt="Truth Social">
-                        </a>
-                        <a href="https://www.linkedin.com/company/ebiblefellowship" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6462c6bb78af7c8e5414c8b9_LinkedIn.png" loading="lazy" alt="LinkedIn">
-                        </a>
-                        <a href="https://rumble.com/c/c-2661762" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/644b08a89881d74abfce9d5d_Rumble%20icon.png" loading="lazy" alt="Rumble">
-                        </a>
-                        <a href="https://gab.com/EBF" target="_blank" class="social-icon">
-                            <img src="https://cdn.prod.website-files.com/5cf040785de32119f9371abf/6440db7571df4867aa5bf745_Gab.png" loading="lazy" alt="Gab">
-                        </a>
-            <!-- Add more sidebar items as needed -->
-        </ul>      
+            <li><a href="music.html"><img src="picture/8.png" alt="图片8" style="width: 150px; height: 150px;"></a></li>
+            <li><a href="docs.html"><img src="picture/11.png" alt="图片11" style="width: 150px; height: 150px;"></a></li>
+            <li><a href="biblebook.html"><img src="picture/12.png" alt="图片12" style="width: 150px; height: 150px;"></a></li>
+            <li><a href="audio.html"><img src="picture/10.png" alt="图片10" style="width: 150px; height: 150px;"></a></li>
+        </ul>
         <!-- Contact Information -->
-        <div class="contact-info" style="margin-top: auto; padding: 20px;">
+        <div class="contact-info">
             <h3>联系我们</h3>
             <p><span style="color: blue;">联系方式:</span> <a href="mailto:info@eBibleFellowship.org" style="color: blue;">info@eBibleFellowship.org</a></p>
-            <p><span style="color: blue;">地址:</span>
-                <p>P.O. Box 1393</p>
-                <p>Sharon Hill, PA 19079-0593 USA</p>
-                <p>© 2024 eBibleFellowship</p>
-            </p>
+            <p><span style="color: blue;">地址:</span></p>
+            <p>P.O. Box 1393</p>
+            <p>Sharon Hill, PA 19079-0593 USA</p>
+            <p>© 2024 eBibleFellowship</p>
+            <p>注：中国大陆听众可能打不开，请加入我们的QQ群：153289064，或加入我们的微信群来看克里斯先生的文章</p>
         </div>
     </div>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>音频播放器</title>
-      <!-- 引入 APlayer 样式 -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-      <style>
-        /* 自定义样式，使音频列表占据整个宽度 */
-        #aplayer-container {
-          width: 100%;
-          max-width: 500px; /* 设置最大宽度为500px */
-          margin: 0 auto; /* 居中显示 */
-          background-color: #fff; /* 白色背景 */
-          color: #000; /* 黑色字体 */
-          padding: 20px; /* 添加一些内边距 */
-          box-sizing: border-box; /* 盒子模型设置为边框盒模型 */
-          top:100px
+
+
+    <!-- Title -->
+    <div class="title"><img src="picture/11.png" alt="图片1"></a></li></div>
+
+    <!-- APlayer Section -->
+    <div class="collapse-container">
+        <div class="collapse-button" onclick="toggleCollapse()">罗马书2章查考</div>
+        <div class="collapse-content" id="collapseContent">
+            <div id="aplayer"></div>
+        </div>
+    </div>
+
+    <!-- APlayer JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <script>
+        function toggleCollapse() {
+            var content = document.getElementById('collapseContent');
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
         }
-      </style>
-    </head>
-    <body>
-      <!-- 音频列表容器 -->
-      <div id="aplayer-container">
-        <!-- APlayer 播放器 -->
-        <div id="aplayer"></div>
-      </div>
-    
-      <!-- 引入 APlayer JavaScript 文件 -->
-      <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-    
-      <script>
-        // 音频列表数组
-        var apList = [
-          {
-            name: '罗马书2章(1)',
-            artist: 'R21',
-            url: 'roman audio/r21.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(2)',
-            artist: 'R22',
-            url: 'roman audio/r22.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(3)',
-            artist: 'R23',
-            url: 'roman audio/r23.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(4)',
-            artist: 'R24',
-            url: 'roman audio/r24.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(5)',
-            artist: 'R25',
-            url: 'roman audio/r25.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(6)',
-            artist: 'R26',
-            url: 'roman audio/r26.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(7)',
-            artist: 'R27',
-            url: 'roman audio/r27.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(8)',
-            artist: 'R28',
-            url: 'roman audio/r28.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(9)',
-            artist: 'R29',
-            url: 'roman audio/r29.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(10)',
-            artist: 'R210',
-            url: 'roman audio/r210.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(11)',
-            artist: 'R211',
-            url: 'roman audio/r211.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(12)',
-            artist: 'R212',
-            url: 'roman audio/r212.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(13)',
-            artist: 'R213',
-            url: 'roman audio/r213.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(14)',
-            artist: 'R214',
-            url: 'roman audio/r214.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(15)',
-            artist: 'R215',
-            url: 'roman audio/r215.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(16)',
-            artist: 'R216',
-            url: 'roman audio/r216.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(17)',
-            artist: 'R217',
-            url: 'roman audio/r217.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(18)',
-            artist: 'R218',
-            url: 'roman audio/r218.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(19)',
-            artist: 'R219',
-            url: 'roman audio/r219.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(20)',
-            artist: 'R220',
-            url: 'roman audio/r220.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(21)',
-            artist: 'R221',
-            url: 'roman audio/r221.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(22)',
-            artist: 'R222',
-            url: 'roman audio/r222.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(23)',
-            artist: 'R223',
-            url: 'roman audio/r223.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(24)',
-            artist: 'R224',
-            url: 'roman audio/r224.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(25)',
-            artist: 'R225',
-            url: 'roman audio/r225.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(26)',
-            artist: 'R226',
-            url: 'roman audio/r226.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(27)',
-            artist: 'R227',
-            url: 'roman audio/r227.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(28)',
-            artist: 'R228',
-            url: 'roman audio/r228.mp3',
-            cover: 'picture/9.png'
-          },
-          {
-            name: '罗马书2章(29)',
-            artist: 'R229',
-            url: 'roman audio/r229.mp3',
-            cover: 'picture/9.png'
-          }
-        ];
-    
-        // 初始化 APlayer
+
+        // Initialize APlayer
         var ap = new APlayer({
-          container: document.getElementById('aplayer'),
-          audio: apList  // 设置音频列表
+            element: document.getElementById('aplayer'),
+            narrow: false,
+            autoplay: false,
+            theme: '#b7daff',
+            loop: 'all',
+            preload: 'auto',
+            music: [
+                { title: '罗马书2章（1）', author: '克里斯麦肯', url: 'audio/r21.mp3' },
+                { title: '罗马书2章（2）', author: '克里斯麦肯', url: 'audio/r22.mp3' },
+                { title: '罗马书2章（3）', author: '克里斯麦肯', url: 'audio/r23.mp3' },
+                { title: '罗马书2章（4）', author: '克里斯麦肯', url: 'audio/r24.mp3' },
+                { title: '罗马书2章（5）', author: '克里斯麦肯', url: 'audio/r25.mp3' },
+                { title: '罗马书2章（6）', author: '克里斯麦肯', url: 'audio/r26.mp3' },
+                { title: '罗马书2章（7）', author: '克里斯麦肯', url: 'audio/r27.mp3' },
+                { title: '罗马书2章（8）', author: '克里斯麦肯', url: 'audio/r28.mp3' },
+                { title: '罗马书2章（9）', author: '克里斯麦肯', url: 'audio/r29.mp3' },
+                { title: '罗马书2章（10）', author: '克里斯麦肯', url: 'audio/r210.mp3' },
+                { title: '罗马书2章（11）', author: '克里斯麦肯', url: 'audio/r211.mp3' },
+                { title: '罗马书2章（12）', author: '克里斯麦肯', url: 'audio/r212.mp3' },
+                { title: '罗马书2章（13）', author: '克里斯麦肯', url: 'audio/r213.mp3' },
+                { title: '罗马书2章（14）', author: '克里斯麦肯', url: 'audio/r214.mp3' },
+                { title: '罗马书2章（15）', author: '克里斯麦肯', url: 'audio/r215.mp3' },
+                { title: '罗马书2章（16）', author: '克里斯麦肯', url: 'audio/r216.mp3' },
+                { title: '罗马书2章（17）', author: '克里斯麦肯', url: 'audio/r217.mp3' },
+                { title: '罗马书2章（18）', author: '克里斯麦肯', url: 'audio/r218.mp3' },
+                { title: '罗马书2章（19）', author: '克里斯麦肯', url: 'audio/r219.mp3' },
+                { title: '罗马书2章（20）', author: '克里斯麦肯', url: 'audio/r220.mp3' },
+                { title: '罗马书2章（21）', author: '克里斯麦肯', url: 'audio/r221.mp3' },
+                { title: '罗马书2章（22）', author: '克里斯麦肯', url: 'audio/r222.mp3' },
+                { title: '罗马书2章（23）', author: '克里斯麦肯', url: 'audio/r223.mp3' },
+                { title: '罗马书2章（24）', author: '克里斯麦肯', url: 'audio/r224.mp3' },
+                { title: '罗马书2章（25）', author: '克里斯麦肯', url: 'audio/r225.mp3' },
+                { title: '罗马书2章（26）', author: '克里斯麦肯', url: 'audio/r226.mp3' },
+                { title: '罗马书2章（27）', author: '克里斯麦肯', url: 'audio/r227.mp3' },
+                { title: '罗马书2章（28）', author: '克里斯麦肯', url: 'audio/r228.mp3' },
+                { title: '罗马书2章（29）', author: '克里斯麦肯', url: 'audio/r229.mp3' }
+            ]
         });
-      </script>
-    </body>
-    </html>
-    <div style="margin-top: 20px; text-align: center;">
-      <h2>罗马书2章查考</h2>
-</body>
-</html>
-
-
+    </script>
 </body>
 </html>
