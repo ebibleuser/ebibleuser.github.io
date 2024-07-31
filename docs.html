@@ -215,6 +215,129 @@
                 display: none; /* Hide the special links section */
             }
         }
+        
+        .special-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .special-links a {
+            margin: 10px;
+        }
+
+        .special-links img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .webplayersidebar {
+            margin-top: 20px;
+            width: 100%; /* Ensure the iframe takes full width */
+            text-align: center; /* Center iframe horizontally */
+        }
+
+        .webplayersidebar iframe {
+            width: 100%;
+            height: 280px;
+            border: 0;
+        }
+
+        .social-media-icons {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; /* Push to the bottom */
+        }
+
+        .social-media-icons a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-media-icons img {
+            width: 60px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .contact-info {
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-info h3 {
+            color: rgb(49, 134, 247);
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: blue;
+        }
+
+        /* Media query for responsive design */
+        @media screen and (max-width: 768px) {
+            /* Small devices (tablets, 768px and down) */
+            .navbar {
+                display: none; /* Hide the sidebar */
+            }
+
+            .special-links {
+                margin-top: 50px; /* Adjust margin for image section */
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            /* Large devices (desktops, 769px and up) */
+            .navbar {
+                display: flex; /* Display the sidebar */
+            }
+
+            .special-links {
+                display: none; /* Hide the special links section */
+            }
+        }
+        .home-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 100px;
+            height: 50px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 18px;
+            text-decoration: none;
+            z-index: 1001;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            display: none; /* Initially hidden */
+        }
+
+        .home-button:hover {
+            background-color: #555;
+        }
+
+        .home-button span {
+            display: block;
+        }
+
+        /* Responsive layout for home button on different screen orientations */
+        @media screen and (orientation: portrait) {
+            .navbar.hidden {
+                display: none; /* Hide the sidebar on portrait orientation */
+            }
+
+            .home-button {
+                display: block; /* Ensure home button is visible */
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -544,6 +667,21 @@
             width: auto;
             height: auto;
         }
+        .navbar {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow: auto;
+            transition: transform 0.3s ease;
+        }
+        @media (max-aspect-ratio: 1/1) {
+            .navbar {
+                display: none; /* Hide sidebar */
+            }
     </style>
 </head>
 <body>
@@ -670,22 +808,5 @@
         <p>Sharon Hill, PA 19079-0593 USA<br></p>
         <p>© 2024 eBibleFellowship<br><p></p>
 </div>
-</div>
-<div class="image-section">
-    <a href="https://newopenforum.org"><img src="picture/7.png" alt="图片7">       
-    <div class="special-links">
-        <li>
-            <div class="webplayersidebar">
-                <iframe src="https://ebiblefellowshipcn.airtime.pro/embed/player?stream=auto&amp;skin=2" style="width: 100%; height: 280px; border: 0;"></iframe>
-            </div>
-
-        <a href="https://ebibleuser.github.io/lag.html"><img src="picture/5.png" alt="图片5"></a>
-        <a href="https://ebibleuser.github.io/music.html"><img src="picture/8.png" alt="图片8"></a>
-        <a href="https://ebibleuser.github.io/audio.html"><img src="picture/10.png" alt="图片10"></a>
-        <a href="https://ebibleuser.github.io/docs.html"><img src="picture/11.png" alt="图片11"></a>
-        <a href="https://ebibleuser.github.io/biblebook.html"><img src="picture/12.png" alt="图片12"></a>
-    </div>
-</div>
-
 </body>
 </html>
